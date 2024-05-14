@@ -17,14 +17,15 @@
         <div class="container">
         <img src="images/logo.jpg">
         <div class="links">
-         <i class="fas fa-bars" id="toggle"></i>
+         <i class="fas fa-bars" id="ticon"></i>
+
         <ul id="links">
         <i class="fas fa-times" id="close"></i>
         <li><a href="#about">About us</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#case">Case Studies</a></li>
         <li><a href="#blog">Blog</a></li>
-        <li><a href="#work">How it Works</a></li>
+        <li><a href="#Works">How it Works</a></li>
         <li><a href="#hire">Hire</a></li>
         </ul>
        </div>
@@ -49,34 +50,34 @@
 <!-- slider -->
 <div class="services">
 <div class="curds">
-<div class="box">
+<div class="box" data-name="one">
 <img src="./images/cod.png">
 <h2>Web Design & Developmen</h2>
 <p>A Website is an extension of yourself and we can help you to express it properly.
 Your website is your number one marketing asset because we live in a digital age.</p>
 </div>
-<div class="box">
+<div class="box" data-name="two">
     <img src="./images/pic2.png">
     <h2>Software Testing Service</h2>
     <p>A Website is an extension of yourself and we can help you to express it properly.
     Your website is your number one marketing asset because we live in a digital age.</p>
     </div>
-    <div class="box">
+    <div class="box active" data-name="three">
         <img src="./images/cod.png">
         <h2>Web Design & Developmen</h2>
         <p>A Website is an extension of yourself and we can help you to express it properly.
         Your website is your number one marketing asset because we live in a digital age.</p>
         </div>
 
-        <div class="box">
+        <div class="box" data-name="four">
             <img src="./images/pic2.png">
-            <h2>Software Testing Service</h2>
+            <h2 id="Services">Software Testing Service</h2>
             <p>A Website is an extension of yourself and we can help you to express it properly.
             Your website is your number one marketing asset because we live in a digital age.</p>
             </div>
 
 
-            <div class="box">
+            <div class="box" data-name="five">
                 <img src="./images/cod.png">
                 <h2>Web Design & Developmen</h2>
                 <p>A Website is an extension of yourself and we can help you to express it properly.
@@ -84,30 +85,27 @@ Your website is your number one marketing asset because we live in a digital age
                 </div>
 
 
-                <div class="box">
+                <div class="box" data-name="six">
                     <img src="./images/mobile.png">
                     <h2>Mobile App Development</h2>
                     <p>A Website is an extension of yourself and we can help you to express it properly.
                     Your website is your number one marketing asset because we live in a digital age.</p>
                     </div>
-                        <div class="box">
+                        <div class="box" data-name="seven">
                             <img src="./images/mobile.png">
                             <h2>Mobile App Development</h2>
                             <p>A Website is an extension of yourself and we can help you to express it properly.
                             Your website is your number one marketing asset because we live in a digital age.</p>
                             </div>
-
-
-
 </div>
 <div class="bollets">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div class="active"></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="bollet" data-name="one"></div>
+    <div class=" bollet " data-name="two"></div>
+    <div class="bollet" data-name="three"></div>
+    <div  class="bollet active" data-name="four"></div>
+    <div class="bollet" data-name="five"></div>
+    <div class="bollet" data-name="six"></div>
+    <div class="bollet" data-name="seven"></div>
     </div>
 
 </div>
@@ -234,7 +232,7 @@ We are a custom software development company that guarantees the successful deli
     </div>
 <i class="fas fa-angle-left arrow" onclick="nextSlide()"></i>
 <i class="fas fa-angle-right arrow" onclick="prevSlide()"></i>
-<script src="./index.js"></script>
+
 </div>
 
 
@@ -257,13 +255,12 @@ We are a custom software development company that guarantees the successful deli
     <img src="./images/second.jpg" alt="">
     <div class="info">
     <h2>Website Design for SCFC Canada</h2>
-    <p>Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario.
+    <p id="Case">Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario.
          Its meteoric rise stems out of a solid foundation.
           The management boasts of over 20 years of rich and varied experience in the shipping and freight forwarding industry.</p>
     <a href="">Read More <i class="fas fa-chevron-right"></i></a>
     </div>
     </div>
-
 
     <div class="item third">
         <img src="./images/third.jpg" alt="">
@@ -278,28 +275,203 @@ We are a custom software development company that guarantees the successful deli
         </div>
 
 </div>
+</div>
+
+<div class="about">
+<div class="container">
+<h2>Way of building<br><span>Great Software</span></h2>
+
+<div class="box">
+<div class="info">
+<h3>Build the right team to scale</h3>
+<p>Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, 
+and sticks with you long term 
+not the case with freelancers</p>
+
+<p>Our <span>delivery model </span>helps you cut costs and deliver within budget.</p>
+<p>"simform is quick to identfiy larger problem with the software so we decide to expand our scope to buid new models"</p>
+
+<div class="data">
+<img src="./images/one.png" alt="">
+<h3>Jeewa markram</h3>
+<span>CEO</span>
+</div>
+</div>
+
+<img src="./images/team1.jpg" alt="">
+</div>
+
+<div class="box">
+    <img src="./images/team2.jpg" alt="">
+    <div class="info">
+    <h3>Build the right team to scale</h3>
+    <p id="about">Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, 
+    and sticks with you long term 
+    not the case with freelancers</p>
+    
+    <p>Our <span>delivery model </span>helps you cut costs and deliver within budget.</p>
+    <p>"simform is quick to identfiy larger problem with the software so we decide to expand our scope to buid new models"</p>
+    
+    <div class="data">
+    <img src="./images/two.png" alt="">
+    <h3>Jeewa markram</h3>
+    <span>CEO</span>
+    </div>
+    </div>
+    </div>
+
+    <div class="box">
+        <div class="info">
+        <h3>Build the right team to scale</h3>
+        <p>Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, 
+        and sticks with you long term 
+        not the case with freelancers</p>
+        
+        <p>Our <span>delivery model </span>helps you cut costs and deliver within budget.</p>
+        <p>"simform is quick to identfiy larger problem with the software so we decide to expand our scope to buid new models"</p>
+        
+        <div class="data">
+        <img src="./images/three.png" alt="">
+        <h3>Jeewa markram</h3>
+        <span>CEO</span>
+        </div>
+        </div>
+        
+        <img src="./images/team3.jpg" alt="">
+        </div>
+</div>
+</div>
+
+<!-- search -->
+
+<div class="filter">
+<h2> <span>Our</span><br>
+    Tech Stack</h2>
+<div class="container" id="Works">
+    <div class="buttons">
+        <button data-name="all" class="active">show all</button>
+        <button data-name="front">Frontend</button>
+        <button data-name="back">Backend</button>
+        <button data-name="db">Database</button>
+        <button data-name="cloud">CloudTesting</button>
+    </div>
+    
+    <div class="filterd-images">
+    <img src="./images/html-removebg-preview.png" alt="" data-name="front"  class="items">
+    <img src="./images/cssjpg.jpg" alt="" data-name="front" class="items">
+    <img src="./images/reactjs.jpg" alt="" data-name="front" class="items">
+    <img src="./images/rails.png" alt="" data-name="front" class="items">
+
+    <img src="./images/NODE.png" alt="" data-name="back" class="items">
+    <img src="./images/c_-removebg-preview.png" alt="" data-name="back" class="items">
+    <img src="./images/laragon.jpg" alt="" data-name="back" class="items">
+    <img src="./images/PYTHON.png" alt="" data-name="back" class="items">
+    <img src="./images/net-removebg-preview.png" alt="" data-name="back" class="items">
+   
+
+    <img src="./images/DB.png" alt="" data-name="db" class="items">
+    <img src="./images/MYSQL.png" alt="" data-name="db" class="items">
+    <img src="./images/oracle.png" alt="" data-name="db" class="items">
+
+    <img src="./images/amazon-removebg-preview.png" alt="" data-name="cloud" class="items">
+    <img src="./images/aws.png" alt="" data-name="cloud" class="items">
+    <img src="./images/dockere-removebg-preview.png" alt="" data-name="cloud" class="items">
+    </div>
 
 
 
+</div>
+</div>
 
+<!-- featurs -->
+<div class="featurs">
+<h2>Featur<br> <span>Resources</span></h2>
+<div class="container">
+    <div class="box">
+        <img src="./images/sec1.jpg">
+        <p>How to Build a Scalable Application up to 1 Million Users on AWS</p>
+        <div class="data">
+            <a>Show more</a>
+        </div>
+        </div>
+        
+        <div class="box">
+            <img src="./images/sec2.jpg">
+            <p>How to Build a Scalable Application up to 1 Million Users on AWS</p>
+            
+            <div class="data">
+                <a>Show more</a>
+            </div>
+            </div>
+        
+        
+            <div class="box">
+                <img src="./images/sec3.jpg">
+                <p>How to Build a Scalable Application up to 1 Million Users on AWS</p>
+                <div class="data">
+                    <a>Show more</a>
+                </div>
+                </div>
+        
+                <div class="box">
+                    <img src="./images/sec4.jpg">
+                    <p>How to Build a Scalable Application up to 1 Million Users on AWS</p>
+                    <div class="data">
+                        <a>Show more</a>
+                    </div>
+                    </div>
 
+                    <div class="box">
+                        <img src="./images/sec5.jpg">
+                        <p>How to Build a Scalable Application up to 1 Million Users on AWS</p>
+                        <div class="data">
+                            <a>Show more</a>
+                        </div>
+                        </div>
+</div>
+</div>
 
+<div class="hire">
+    <div class="container">
+        <p>Hire the best developers and <br>designers around!</p>
+        <h3 id="Hire">Hire Top Developers</h3>
+    </div>
 
+</div>
 
+<footer>
+<div class="container">
+<div class="box">
+<img src="./images/logo.jpg">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+<img src="./images/fim1.png">
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="links">
+<h3>Links</h3>
+<ul id="links">
+    <li><a href="#about">About us</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#case">Case Studies</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#work">How it Works</a></li>
+    <li><a href="">Career</a></li>
+    </ul>
+</div>
+<div class="contact">
+    <h3>Contact us</h3>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+<p>+923183561921</p>
+</div>
+<div class="media">
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-linkedin-in"></i>
+</div>
+</div>
+<p class="copy">© 2024 Copyright by Rehab Shaban. All rights reserved</p>
+</footer>
 
 
 <script src="./index.js"></script>
