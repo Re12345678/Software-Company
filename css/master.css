@@ -113,8 +113,6 @@ header ul #close{
 }
 @media (max-width:992px) {
     header #links{
-         display: none;
-        display: flex;
         display: flex;
         width: 623px;
     }
@@ -159,7 +157,6 @@ header ul #close{
         display: flex;
         width: 276px;
         margin-left: -200px;
-        display: none;
         z-index: 1;
     }
 }
@@ -190,7 +187,7 @@ header ul #close{
 .landing .container{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 82px;
+    margin-top: 182px;
 }
 .landing .info{
     flex-basis: 50%;
@@ -995,7 +992,7 @@ footer .copy{
     .hire .container h3{
         width: 147px;
         position: relative;
-        top: -24px;
+        top: -69px;
         padding-top: 14px;
     }
 }
