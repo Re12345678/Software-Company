@@ -154,7 +154,7 @@ header ul #close{
             font-weight: bold;
     }
     header #links{
-        display: flex;
+        display: none;
         width: 276px;
         margin-left: -200px;
         z-index: 1;
