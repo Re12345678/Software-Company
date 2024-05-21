@@ -1,134 +1,75 @@
-// const ticon=document.querySelector("#ticon");
-let links=document.getElementById("links");
-let close=document.getElementById("close");
-let ticon=document.getElementById("ticon");
+let input = document.querySelector(".get-repos input");
+    let getbutton = document.querySelector(".get-button");
+    let repodata = document.querySelector(".show-data");
+    let alertBox=document.querySelector(".alert");
 
-ticon.onclick=function(){
-links.style.display="flex";
-}
-close.onclick=function(){
-    links.style.display="none";
+    getbutton.onclick = getrepo;
+
+    function getrepo() {
+      if (input.value === "") {
+        alertBox.style.display = "block";
+      } else {
+        alertBox.style.display = "none";
+        fetch(`https://api.github.com/users/${input.value}/repos`)
+          .then((res) => res.json())
+          .then((repos) => {
+            repodata.innerHTML = "";
+
+            repos.forEach(repo => {
+              let mdiv = document.createElement("div");
+              mdiv.className = 'repo-box';
+              mdiv.style.cssText = `
+                padding: 15px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+              `;
+
+              let rname = document.createElement("strong");
+              let rnametext = document.createTextNode(repo.name);
+              rname.appendChild(rnametext);
+              rname.style.cssText = `
+                font-size: 16px;
+                font-weight: bold;
+              `;
+              mdiv.appendChild(rname);
+
+              let url = document.createElement("a");
+              let urltext = document.createTextNode("Repo");
+              url.appendChild(urltext);
+              url.href = `https://github.com/${input.value}/${repo.name}`;
+              url.setAttribute("target", '_blank');
+              url.style.cssText = `
+                margin-top: 10px;
+                text-decoration: none;
+                color: #0073e6;
+              `;
+              mdiv.appendChild(url);
+
+              let starspan = document.createElement("span");
+              starspan.style.cssText = `
+                margin-top: 10px;
+                font-size: 14px;
+                color: #555;
+              `;
+
+              let starIcon = document.createElement("i");
+              starIcon.classList.add("fas", "fa-star");
+              starIcon.style.cssText = `
+                color: gold;
+                margin-right: 5px;
+              `;
+              starspan.appendChild(starIcon);
+
+              let startext = document.createTextNode(` ${repo.stargazers_count}`);
+              starspan.appendChild(startext);
+              mdiv.appendChild(starspan);
+
+              repodata.appendChild(mdiv);
+            });
+          });
+      }
     }
-
-
-    let slideIndex = 0;
-
-    function showSlide(n) {
-    const slides = document.getElementsByClassName("slide");
-    if (n < 0) {
-    slideIndex = slides.length - 1;
-    } else if (n >= slides.length) {
-    slideIndex = 0;
-    }
-    for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    }
-    slides[slideIndex].style.display = "block";
-    }
-    
-    function nextSlide() {
-    showSlide(++slideIndex);
-    }
-    
-    function prevSlide() {
-    showSlide(--slideIndex);
-    }
-    
-    showSlide(slideIndex);
-
-
-// filter
-
-const fibuttons=document.querySelectorAll(".buttons");
-const filteritems=document.querySelectorAll(".filterd-images .items");
-
-const filtercards = (e) => {
-    // Remove 'active' class from all elements
-    const activeElements = document.querySelectorAll('.active');
-    activeElements.forEach(element => {
-        element.classList.remove('active');
-    });
-    e.target.classList.add('active');
-
-    filteritems.forEach(item=>{
-        item.classList.add("hide");
-    if(item.dataset.name === e.target.dataset.name || e.target.dataset.name === "all"){
-        item.classList.remove("hide");
-    }
-    })
-};
-fibuttons.forEach(button =>button.addEventListener("click",filtercards));
-
-
-
-let curds=document.querySelectorAll(".curds .box");
-let bollets=document.querySelectorAll(".bollets .bollet");
-
-const moveactive = (e) => {
-    const activeBollet = document.querySelector(".bollets .active");
-    if (activeBollet) {
-        activeBollet.classList.remove("active");
-    }
-    e.target.classList.add("active");
-
-    const bolletDataName = e.target.dataset.name;
-    curds.forEach(item => {
-        item.style.cssText = "transform:translatey(0);";
-        if (item.dataset.name === bolletDataName) {
-            item.style.cssText = "transform:translatey(10px);";
-        }
-    });
-};
-
-bollets.forEach(button => button.addEventListener("click", moveactive));
-
-
-
-
-
-let isMoving = false;
-let slideInterval;
-let currentSpeed = 0.5; // Initial speed
-const deceleration = 0.01; // Deceleration rate
-
-function handleMouseMove(event) {
-    if (!isMoving) {
-        isMoving = true;
-        smoothSlide();
-    }
-}
-
-function handleMouseLeave() {
-    clearInterval(slideInterval);
-    isMoving = false;
-}
-
-function smoothSlide() {
-    const slider = document.querySelector('.curds');
-    const maxScroll = slider.scrollWidth - slider.offsetWidth;
-
-    slideInterval = setInterval(() => {
-        if (!isMoving) {
-            clearInterval(slideInterval);
-            return;
-        }
-
-        slider.scrollLeft += currentSpeed;
-
-        if (slider.scrollLeft <= 0 || slider.scrollLeft >= maxScroll) {
-            isMoving = false;
-            clearInterval(slideInterval);
-            return;
-        }
-
-        currentSpeed -= deceleration;
-        if (currentSpeed <= 0) {
-            currentSpeed = 0;
-            isMoving = false;
-            clearInterval(slideInterval);
-        }
-    }, 16); // Approx. 60 FPS
-}
-
-document.querySelector('.curds').addEventListener('mousemove', handleMouseMove);
-document.querySelector('.curds').addEventListener('mouseleave', handleMouseLeave);
